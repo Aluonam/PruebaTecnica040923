@@ -2,7 +2,8 @@
 Prueba técnica:
 	https://randomuser.me/  
 •	Listar 50 usuarios en una tabla con los siguientes cambios:
-o	Nombre + apellidos
+o	Nombre + apellidos  usando literal string {`${----} ${----}`}
+--> <td>{`${elementoActual.name.first} ${elementoActual.name.last}`}</td>
 o	Edad
 o	Genero
 o	Fecha de registro
