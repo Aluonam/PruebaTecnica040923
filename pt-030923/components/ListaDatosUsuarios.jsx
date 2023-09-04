@@ -4,7 +4,9 @@ import BotonDetalles from './BotonDetalles'
 const ListaDatosUsuarios = ({datosUsuario}) => {
  // habría puesto otro nombre al componente ya que va a crear una Tabla
 
-    const tabla = datosUsuario.map(( elementoActual )=>{
+
+        //interrogacion antes del map porque al poner useState como objeto {} le preguntas va a llegar un array con datos? y si le llega hace el .map
+    const tabla = datosUsuario?.map(( elementoActual )=>{
 
         const fechaRegistro = elementoActual.registered.date.split("T")[0]
         // console.log(fechaRegistro);
