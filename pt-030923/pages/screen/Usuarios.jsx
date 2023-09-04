@@ -1,3 +1,4 @@
+import ListaDatosUsuarios from '@/components/ListaDatosUsuarios'
 import React, { useState, useEffect} from 'react'
 
 const Usuarios = () => {
@@ -19,7 +20,10 @@ const Usuarios = () => {
     
 
   return (
+    <>
     <div>Usuarios</div>
+    <ListaDatosUsuarios datosUsuario={datosAPI}></ListaDatosUsuarios>
+    </>
   )
 }
 
