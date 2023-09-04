@@ -1,9 +1,10 @@
+import Filtros from '@/components/Filtros'
 import ListaDatosUsuarios from '@/components/ListaDatosUsuarios'
 import React, { useState, useEffect} from 'react'
 
 const Usuarios = () => {
 
-    const [datosAPI, setDatosAPI] = useState([])
+    const [datosAPI, setDatosAPI] = useState({})
 
     useEffect(() => {
         llamadaAPI()
@@ -13,8 +14,11 @@ const Usuarios = () => {
         try{
             const llamada = await fetch(`https://randomuser.me/api/?results=15`);
             const datos = await llamada.json();
-            console.log(datos.results);
-            setDatosAPI(datos.results)
+            // console.log("resultados",datos.results);
+            // setDatosAPI(datos.results)
+            
+            setDatosAPI({originData:datos.results,showData:datos.results})
+            //convertir en objeto para reusar el mismo useState
         }catch(error) {"error detected", error}
     }
     
@@ -22,7 +26,8 @@ const Usuarios = () => {
   return (
     <>
     <div>Usuarios</div>
-    <ListaDatosUsuarios datosUsuario={datosAPI}></ListaDatosUsuarios>
+    <Filtros datosAPI={datosAPI} setDatosAPI={setDatosAPI}></Filtros>
+    <ListaDatosUsuarios datosUsuario={datosAPI.showData}></ListaDatosUsuarios>
     </>
   )
 }
