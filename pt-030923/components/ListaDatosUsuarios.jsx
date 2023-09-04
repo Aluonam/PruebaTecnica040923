@@ -1,4 +1,5 @@
 import React from 'react'
+import BotonDetalles from './BotonDetalles'
 
 const ListaDatosUsuarios = ({datosUsuario}) => {
  // habría puesto otro nombre al componente ya que va a crear una Tabla
@@ -8,12 +9,12 @@ const ListaDatosUsuarios = ({datosUsuario}) => {
         const fechaRegistro = elementoActual.registered.date.split("T")[0]
         // console.log(fechaRegistro);
         return(
-            <tr key={elementoActual.id.value}>
+            <tr>
                 <td>{`${elementoActual.name.first} ${elementoActual.name.last}`}</td>
                 <td>{elementoActual.dob.age}</td>
                 <td>{elementoActual.gender}</td>
                 <td>{fechaRegistro}</td>
-                <td>Boton</td>
+                <td><BotonDetalles usuario={elementoActual}></BotonDetalles></td>
             </tr>
         )
     })

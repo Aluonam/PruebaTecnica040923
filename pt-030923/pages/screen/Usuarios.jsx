@@ -11,7 +11,7 @@ const Usuarios = () => {
 
     const llamadaAPI = async () => {
         try{
-            const llamada = await fetch(`https://randomuser.me/api/?results=50`);
+            const llamada = await fetch(`https://randomuser.me/api/?results=15`);
             const datos = await llamada.json();
             console.log(datos.results);
             setDatosAPI(datos.results)
