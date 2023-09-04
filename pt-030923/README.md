@@ -1,5 +1,5 @@
-# PruebaTecnica040923
 
+Prueba técnica:
 	https://randomuser.me/  
 •	Listar 50 usuarios en una tabla con los siguientes cambios:
 o	Nombre + apellidos
